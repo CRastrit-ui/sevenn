@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Н Класс - Подготовка к Аттестации</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>📚 7Н Класс</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active" data-section="home">Главная</a>
+                    <a href="#news" class="nav-link" data-section="news">Новости</a>
+                    <a href="#materials" class="nav-link" data-section="materials">Материалы</a>
+                    <a href="#admin" class="nav-link admin-link" data-section="admin">Админ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Главная секция -->
+        <section id="home" class="section active" data-section="home">
+            <div class="container">
+                <div class="hero-section">
+                    <img src="class-avatar.jpg" alt="7Н Класс" class="class-avatar"
+                        onerror="this.src='https://via.placeholder.com/200x200/22c55e/ffffff?text=7H'">
+                    <h1 class="class-title">7Н Класс</h1>
+                    <p class="class-subtitle">Естественно-научная вертикаль</p>
+
+                    <!-- Реальное время по Москве -->
+                    <div class="time-container">
+                        <div class="time-display" id="time-display">00:00:00</div>
+                        <div class="time-date" id="date-display">--.--.----</div>
+                        <div class="time-city">📍 Москва, Россия</div>
+                    </div>
+
+                    <!-- Таймер обратного счёта -->
+                    <div class="countdown-container">
+                        <h3 class="countdown-title">⏰ До промежуточной аттестации</h3>
+                        <div class="countdown-grid">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days-count">0</div>
+                                <div class="countdown-label">Дней</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours-count">0</div>
+                                <div class="countdown-label">Часов</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes-count">0</div>
+                                <div class="countdown-label">Минут</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds-count">0</div>
+                                <div class="countdown-label">Секунд</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours-count">0</div>
+                        <div class="countdown-label">Часов</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes-count">0</div>
+                        <div class="countdown-label">Минут</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds-count">0</div>
+                        <div class="countdown-label">Секунд</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Даты экзаменов -->
+            <div class="exams-grid">
+                <div class="exam-card history">
+                    <div class="exam-date">12 мая</div>
+                    <div class="exam-subject">История</div>
+                    <div class="exam-type">МЦКО</div>
+                </div>
+                <div class="exam-card physics">
+                    <div class="exam-date">14 мая</div>
+                    <div class="exam-subject">Физика</div>
+                    <div class="exam-type">МЦКО</div>
+                </div>
+                <div class="exam-card biology">
+                    <div class="exam-date">20 мая</div>
+                    <div class="exam-subject">Биология</div>
+                    <div class="exam-type">МЦКО</div>
+                </div>
+            </div>
+
+            <!-- Кнопка скачивания -->
+            <div class="download-section">
+                <h3 class="download-title">📥 Все материалы для подготовки</h3>
+                <a href="#materials" class="download-btn" onclick="showMaterials()">
+                    Скачать материалы
+                </a>
+                <p class="download-count" id="download-count">Загружено материалов: 0</p>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Секция Новости -->
+        <section id="news" class="section" data-section="news">
+            <div class="container">
+                <h2 class="section-title">📰 Последние новости</h2>
+                <div class="news-grid" id="news-container">
+                    <!-- Новости будут загружаться здесь -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Материалы -->
+        <section id="materials" class="section" data-section="materials">
+            <div class="container">
+                <h2 class="section-title">📋 Материалы для подготовки</h2>
+
+                <div class="materials-filter">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="история">История</button>
+                    <button class="filter-btn" data-filter="физика">Физика</button>
+                    <button class="filter-btn" data-filter="биология">Биология</button>
+                </div>
+
+                <div class="materials-grid" id="materials-container">
+                    <!-- Материалы будут загружаться здесь -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Админ -->
+        <section id="admin" class="section" data-section="admin">
+            <div class="container">
+                <h2 class="section-title">🔐 Админ-панель</h2>
+
+                <!-- Форма входа -->
+                <div id="admin-login" class="admin-login">
+                    <div class="login-card">
+                        <h3>Вход для администратора</h3>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="admin-password">Пароль</label>
+                                <input type="password" id="admin-password" placeholder="Введите пароль" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Войти</button>
+                        </form>
+                        <p class="login-error" id="login-error"></p>
+                    </div>
+                </div>
+
+                <!-- Панель управления -->
+                <div id="admin-panel" class="admin-panel" style="display: none;">
+                    <div class="admin-header">
+                        <h3>Управление контентом</h3>
+                        <button id="logout-btn" class="btn btn-secondary">Выйти</button>
+                    </div>
+
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" data-tab="add-news">Добавить новость</button>
+                        <button class="admin-tab" data-tab="add-material">Добавить материал</button>
+                    </div>
+
+                    <!-- Добавление новости -->
+                    <div class="admin-tab-content active" id="add-news">
+                        <form id="news-form" class="admin-form">
+                            <div class="form-group">
+                                <label for="news-title">Заголовок</label>
+                                <input type="text" id="news-title" placeholder="Введите заголовок новости" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="news-content">Текст новости</label>
+                                <textarea id="news-content" rows="5" placeholder="Введите текст новости"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="news-category">Категория</label>
+                                <select id="news-category">
+                                    <option value="общее">Общее</option>
+                                    <option value="история">История</option>
+                                    <option value="физика">Физика</option>
+                                    <option value="биология">Биология</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Опубликовать</button>
+                        </form>
+                    </div>
+
+                    <!-- Добавление материала -->
+                    <div class="admin-tab-content" id="add-material">
+                        <form id="material-form" class="admin-form">
+                            <div class="form-group">
+                                <label for="material-title">Название материала</label>
+                                <input type="text" id="material-title"
+                                    placeholder="Например: Тренировочный вариант по физике" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="material-subject">Предмет</label>
+                                <select id="material-subject" required>
+                                    <option value="">Выберите предмет</option>
+                                    <option value="история">История</option>
+                                    <option value="физика">Физика</option>
+                                    <option value="биология">Биология</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="material-description">Описание</label>
+                                <textarea id="material-description" rows="3"
+                                    placeholder="Краткое описание материала"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="material-file">PDF файл</label>
+                                <input type="file" id="material-file" accept=".pdf" required>
+                                <span class="file-info">Максимум 10 МБ</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Загрузить материал</button>
+                        </form>
+                    </div>
+
+                    <!-- Список материалов для удаления -->
+                    <div class="materials-list" id="materials-list">
+                        <h4>Загруженные материалы</h4>
+                        <div id="admin-materials-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для просмотра PDF -->
+    <div id="pdf-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="pdf-title">Название файла</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdf-viewer" src=""></iframe>
+            </div>
+            <div class="modal-footer">
+                <a id="pdf-download" href="" target="_blank" class="btn btn-primary">Скачать PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомления -->
+    <div id="notification" class="notification"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 7Н Класс - Подготовка к промежуточной аттестации</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
